@@ -41,7 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concreate\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Commerce.Core\Commerce.Core.csproj">
+      <Project>{12250B19-612D-4F5C-8D4C-08ED8F2ADF24}</Project>
+      <Name>Commerce.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commerce.Entities\Commerce.Entities.csproj">
+      <Project>{FE890844-7C15-4A1E-B8C7-C3285EF3F797}</Project>
+      <Name>Commerce.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
