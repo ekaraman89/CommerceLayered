@@ -14,7 +14,7 @@ namespace DataAccess.Test.EntityFrameworkTests
 
             var result = productDal.GetList();
 
-            Assert.AreEqual(0, result.Count);
+            Assert.AreEqual(3, result.Count);
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace DataAccess.Test.EntityFrameworkTests
             };
             var result = productDal.Add(product);
 
-            Assert.AreEqual(2, result.ProductId);
+            Assert.AreEqual(4, result.ProductId);
         }
 
 

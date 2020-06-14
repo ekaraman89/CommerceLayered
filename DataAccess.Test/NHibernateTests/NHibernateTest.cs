@@ -41,7 +41,7 @@ namespace DataAccess.Test.NHibernateTests
 
             var result = productDal.GetList();
 
-            Assert.AreEqual(3, result.Count);
+            Assert.AreEqual(4, result.Count);
         }
     }
 }
