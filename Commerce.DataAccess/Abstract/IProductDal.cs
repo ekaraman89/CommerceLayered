@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Commerce.Core.DataAccess;
-using Commerce.Entities.Concreate;
+﻿using Commerce.Core.DataAccess;
+using Commerce.Entities.Concrete;
 
 namespace Commerce.DataAccess.Abstract
 {
