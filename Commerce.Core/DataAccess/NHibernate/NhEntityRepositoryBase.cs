@@ -1,19 +1,17 @@
-﻿using System;
+﻿using Commerce.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using Commerce.Core.Entities;
 
 namespace Commerce.Core.DataAccess.NHibernate
 {
-    class NHibernateRepositoryBase<TEntity> : IEntityRepository<TEntity>
+    public class NhEntityRepositoryBase<TEntity> : IEntityRepository<TEntity>
     where TEntity : class, IEntity, new()
     {
         private NHibernateHelper _nHibernateHelper;
 
-        public NHibernateRepositoryBase(NHibernateHelper nHibernateHelper)
+        public NhEntityRepositoryBase(NHibernateHelper nHibernateHelper)
         {
             _nHibernateHelper = nHibernateHelper;
         }
@@ -25,7 +23,6 @@ namespace Commerce.Core.DataAccess.NHibernate
                 return filter == null
                     ? session.Query<TEntity>().ToList()
                     : session.Query<TEntity>().Where(filter).ToList();
-
             }
         }
 
