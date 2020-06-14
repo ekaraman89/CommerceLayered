@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.Entities", "Commer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.MvcWebUI", "Commerce.MvcWebUI\Commerce.MvcWebUI.csproj", "{C9A7F92B-A18A-43CC-AC08-244C066BEB0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Test", "DataAccess.Test\DataAccess.Test.csproj", "{36F3DEE9-B2BB-4E3B-9AB3-092300A045F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C9A7F92B-A18A-43CC-AC08-244C066BEB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9A7F92B-A18A-43CC-AC08-244C066BEB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9A7F92B-A18A-43CC-AC08-244C066BEB0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36F3DEE9-B2BB-4E3B-9AB3-092300A045F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F3DEE9-B2BB-4E3B-9AB3-092300A045F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F3DEE9-B2BB-4E3B-9AB3-092300A045F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F3DEE9-B2BB-4E3B-9AB3-092300A045F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
