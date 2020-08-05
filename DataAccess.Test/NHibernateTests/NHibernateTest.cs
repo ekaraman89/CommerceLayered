@@ -1,10 +1,6 @@
-﻿using System;
-using System.Reflection;
-using Commerce.DataAccess.Concrete.NHibernate;
+﻿using Commerce.DataAccess.Concrete.NHibernate;
 using Commerce.DataAccess.Concrete.NHibernate.Helpers;
-using FluentNHibernate.Cfg;
-using FluentNHibernate.Cfg.Db;
-using FluentNHibernate.Conventions.Helpers;
+using Commerce.Entities.Concrete;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DataAccess.Test.NHibernateTests
@@ -15,33 +11,28 @@ namespace DataAccess.Test.NHibernateTests
         [TestMethod]
         public void Get_all_nhibernate_test()
         {
-            var tt = Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2012.ConnectionString(c => c.FromConnectionStringWithKey("CommerceDbContext")).ShowSql())
-                .Mappings(cfg =>
-                {
-                    cfg.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly());
-                    cfg.FluentMappings.Conventions.Add(AutoImport.Never());
-                })
-                .BuildSessionFactory();
-
-            try
-            {
-                var t2 = new SqlServerHelper();
-            }
-            catch (System.Exception ex)
-            {
-
-                Console.WriteLine(ex);
-            }
-
-            var t = new SqlServerHelper();
-
-
-            NhProductDal productDal = new NhProductDal(t);
+            NhProductDal productDal = new NhProductDal(new SqlServerHelper());
 
             var result = productDal.GetList();
 
             Assert.AreEqual(4, result.Count);
+
+        }
+
+        [TestMethod]
+        public void Add_nhibernate_test()
+        {
+            var product = new Product
+            {
+                CategoryId = 1,
+                ProductName = "test2",
+                QuantityPerUnit = "15",
+                UnitPrice = 87
+            };
+            NhProductDal productDal = new NhProductDal(new SqlServerHelper());
+
+            var result = productDal.Add(product);
+            Assert.AreEqual(5, result.ProductId);
         }
     }
 }
