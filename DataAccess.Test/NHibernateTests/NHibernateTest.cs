@@ -16,7 +16,7 @@ namespace DataAccess.Test.NHibernateTests
             var result = productDal.GetList();
 
             Assert.AreEqual(4, result.Count);
-
+             
         }
 
         [TestMethod]
