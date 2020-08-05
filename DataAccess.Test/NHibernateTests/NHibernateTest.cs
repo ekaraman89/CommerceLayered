@@ -14,7 +14,7 @@ namespace DataAccess.Test.NHibernateTests
             NhProductDal productDal = new NhProductDal(new SqlServerHelper());
 
             var result = productDal.GetList();
-
+             
             Assert.AreEqual(4, result.Count);
         }
 
